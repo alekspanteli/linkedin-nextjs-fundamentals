@@ -1,3 +1,9 @@
 export default function Home() {
-  return <h1 className="container mx-auto">Hello world!</h1>;
+  return (
+    <div className="">
+      <h1 className="text-lg text-blue-700 font-bold">
+        Welcome to my eLearning
+      </h1>
+    </div>
+  );
 }
