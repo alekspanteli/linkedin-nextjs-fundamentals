@@ -1,10 +1,25 @@
-export default function News() {
-  return <h1 className="text-lg text-blue-700 font-bold">Top Stories</h1>;
+export default function News({ posts }) {
+  return (
+    <>
+      <h1 className="text-lg text-blue-700 font-bold">Top Stories</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.name}</li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
 export async function getStaticProps() {
-  const URL = "https://jsonplaceholder.typicode.com/posts";
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const posts = await res.json();
+
+  console.log(posts);
+
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      posts,
+    },
   };
 }
