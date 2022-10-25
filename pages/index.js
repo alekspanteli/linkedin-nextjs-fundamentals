@@ -18,7 +18,7 @@ export default function Home() {
       <form onSubmit={handleOnSubmit}>
         <input
           type="text"
-          className="border rounded-md w-full px-3 py-2"
+          className="border rounded-md px-3 py-2"
           onChange={handleOnChange}
         />
       </form>
